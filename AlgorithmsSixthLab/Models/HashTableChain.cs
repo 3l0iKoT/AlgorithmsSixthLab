@@ -27,7 +27,7 @@ namespace AlgorithmsSixthLab.Models
                 if (pair.Key == key)
                     throw new InvalidOperationException("Key already exists.");
             }
-            table[index].AddLast(new KeyValuePair<int, string>(key, value));
+            table[index].AddFirst(new KeyValuePair<int, string>(key, value));
         }
 
         public string Search(int key)

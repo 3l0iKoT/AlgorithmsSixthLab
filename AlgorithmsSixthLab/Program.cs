@@ -12,18 +12,20 @@ namespace AlgorithmsSixthLab
     {
         static void Main(string[] args)
         {
-            const int numberOfKeys = 100000;
-
             // Генерация уникальных ключей
-            HashSet<int> keys = GenerateKeys(numberOfKeys);
+            HashSet<int> keys1 = GenerateKeys(100000);
 
             // Анализ работы хэш-функций с цепочками
             Console.WriteLine("Analysis for Chaining:");
-            Analyzer.AnalyzeHashFunctions(keys, 1000);
+            Analyzer.AnalyzeHashFunctions(keys1, 1000);
+
+            HashSet<int> keys2 = GenerateKeys(10000);
 
             // Анализ работы хэш-функций с открытой адресацией
             Console.WriteLine("Analysis for Open Addressing:");
-            Analyzer.AnalyzeOpenAddressing(keys, 10000);
+            Analyzer.AnalyzeOpenAddressing(keys2, 10000);
+
+            Console.ReadKey();
         }
 
         static HashSet<int> GenerateKeys(int count)

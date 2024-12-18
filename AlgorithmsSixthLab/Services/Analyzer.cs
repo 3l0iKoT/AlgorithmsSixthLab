@@ -16,7 +16,9 @@ namespace AlgorithmsSixthLab.Services
             {
                 HashFunctions.DivisionHash,
                 HashFunctions.MultiplicationHash,
-                HashFunctions.CustomHash
+                HashFunctions.CustomHash,
+                //HashFunctions.BadHash1,
+                //HashFunctions.BadHash2
             };
 
             foreach (var hashFunction in hashFunctions)
