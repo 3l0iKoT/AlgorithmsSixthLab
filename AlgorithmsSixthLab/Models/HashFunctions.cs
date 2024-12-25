@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.Arm;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,26 +22,10 @@ namespace AlgorithmsSixthLab.Models
             return (int)(size * ((key * A) % 1));
         }
 
-        public static int CustomHash(int key, int size)
+        public static int CustomHash1(int key, int size)
         {
             key = (int)((key ^ (key >> 4)) * 2654435761); // XOR + побитовая перестановка
             return Math.Abs(key % size);
-        }
-
-        public static int BadHash1(int key, int size)
-        {
-            return key % 10; // Учитывает только последнюю цифру
-        }
-
-        public static int BadHash2(int key, int size)
-        {
-            int hash = 0;
-            while (key > 0)
-            {
-                hash += key & 1;
-                key >>= 1;
-            }
-            return hash;
         }
 
         // Task 2

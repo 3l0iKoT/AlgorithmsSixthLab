@@ -16,7 +16,7 @@ namespace AlgorithmsSixthLab.Services
             {
                 HashFunctions.DivisionHash,
                 HashFunctions.MultiplicationHash,
-                HashFunctions.CustomHash,
+                HashFunctions.CustomHash1   
                 //HashFunctions.BadHash1,
                 //HashFunctions.BadHash2
             };
@@ -31,7 +31,7 @@ namespace AlgorithmsSixthLab.Services
 
                 table.Analyze(out int minChain, out int maxChain, out double loadFactor);
                 Console.WriteLine($"Hash Function: {hashFunction.Method.Name}");
-                Console.WriteLine($"Min Chain: {minChain}, Max Chain: {maxChain}, Load Factor: {loadFactor}");
+                Console.WriteLine($"Min Chain: {minChain}, Max Chain: {maxChain}, Difference between maximum and minimum chain {maxChain - minChain}, Load Factor: {loadFactor}");
                 Console.WriteLine();
                 table.ExportToFile($"HashTableChain{hashFunction.Method.Name}.txt");
             }

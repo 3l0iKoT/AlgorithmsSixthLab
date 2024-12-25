@@ -63,7 +63,6 @@ namespace AlgorithmsSixthLab.Models
                     return;
                 }
             }
-            throw new InvalidOperationException("Key not found.");
         }
 
         public int GetLongestCluster()
